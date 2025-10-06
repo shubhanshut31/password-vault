@@ -1,7 +1,6 @@
 import nodemailer from 'nodemailer';
 import User from "@/models/userModel";
 import bcryptjs from 'bcryptjs';
-import dotenv from 'dotenv';
 export const sendEmail = async ({ email, emailType, userId }: any) => {
     try {
         const hashedToken = await bcryptjs.hash(userId.toString(), 10)
@@ -25,4 +24,3 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
         throw new Error(error.message);
     }
 }
-dotenv.config();
