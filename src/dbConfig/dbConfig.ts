@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
+
 export async function connect() {
     try {
         mongoose.connect(process.env.MONGO_URI!);
@@ -16,4 +16,3 @@ export async function connect() {
         console.log(error);
     }
 }
-dotenv.config();
