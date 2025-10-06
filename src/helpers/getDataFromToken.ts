@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 import jwt from "jsonwebtoken";
-import dotenv from "dotenv";
+
 export const getDataFromToken = (request: NextRequest) => {
     try {
         const token = request.cookies.get("token")?.value || '';
@@ -10,4 +10,4 @@ export const getDataFromToken = (request: NextRequest) => {
         throw new Error(error.message);
     }
 }
-dotenv.config();
+
